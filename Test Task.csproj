@@ -22,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -31,10 +32,24 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AngleSharp, Version=0.14.0.0, Culture=neutral, PublicKeyToken=e83494dcdc6d31ea, processorArchitecture=MSIL">
+      <HintPath>..\packages\AngleSharp.0.14.0\lib\net472\AngleSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="AngleSharp.Xml, Version=0.14.0.0, Culture=neutral, PublicKeyToken=e83494dcdc6d31ea, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\AngleSharp.Xml.0.14.0\lib\net472\AngleSharp.Xml.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encoding.CodePages, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encoding.CodePages.4.5.0\lib\net461\System.Text.Encoding.CodePages.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -43,16 +58,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Enums\OfferType.cs" />
+    <Compile Include="Interfaces\IDownloadableOffer.cs" />
+    <Compile Include="Models\Abstract\DeliveredOffer.cs" />
+    <Compile Include="Models\Abstract\DownloadableDeliveredOffer.cs" />
+    <Compile Include="Models\Abstract\DownloadableOffer.cs" />
+    <Compile Include="Models\Goods\ArtistTitle.cs" />
+    <Compile Include="Models\Goods\Audiobook.cs" />
+    <Compile Include="Models\Goods\BaseOffer.cs" />
+    <Compile Include="Models\Goods\Book.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Currency.cs" />
-    <Compile Include="Models\Offer.cs" />
-    <Compile Include="Models\VendorModel.cs" />
+    <Compile Include="Interfaces\IDeliveryOffer.cs" />
+    <Compile Include="Interfaces\IOffer.cs" />
+    <Compile Include="Models\Goods\EventTicket.cs" />
+    <Compile Include="Models\Goods\Tour.cs" />
+    <Compile Include="Models\Goods\VendorModel.cs" />
+    <Compile Include="Models\Parser.cs" />
+    <Compile Include="Models\Shop.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

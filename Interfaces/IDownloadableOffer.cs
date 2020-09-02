@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Test_Task.Models
+namespace Test_Task.Interfaces
 {
-    class VendorModel
+    public interface IDownloadableOffer : IOffer
     {
+        public bool Downloadable { get; set; }
     }
 }
