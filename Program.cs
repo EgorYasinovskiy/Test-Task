@@ -13,10 +13,10 @@ namespace Test_Task
         static void Main(string[] args)
         {
             Parser parser = new Parser();
-            var a = parser.GetShopFromUrl("http://partner.market.yandex.ru/pages/help/YML.xml").Result;
+            var shop = parser.GetShopFromUrl("http://partner.market.yandex.ru/pages/help/YML.xml").Result;
             using (StreamWriter sw = new StreamWriter("ids.txt",false,Encoding.Unicode))
             {
-                foreach (var offer in a.Offers)
+                foreach (var offer in shop.Offers)
                 {
                     sw.WriteLine(offer.Id);
                 }
